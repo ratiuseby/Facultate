@@ -1,0 +1,199 @@
+<!-- Ratiu Sebastian 	Facultatea de Matematica si Informatica - TIN -->
+<!doctype html>
+<html>
+<head>
+<style>
+	#myCanvas {
+		border: 10px dotted #9C9B9B;
+	};
+</style>
+<script>
+	window.onload = function() {
+		var canvas = document.getElementById("myCanvas");
+		var context = canvas.getContext("2d");
+		
+		//roof
+		context.beginPath();
+		context.moveTo(400, 150);
+		context.lineTo(550, 250);
+		context.strokeStyle = "red";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(550, 250);
+		context.lineTo(250, 250);
+		context.strokeStyle = "blue";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(250, 250);
+		context.lineTo(400, 150);
+		context.strokeStyle = "green";
+		context.stroke();
+		
+		//walls
+		context.beginPath();
+		context.moveTo(550, 250);
+		context.lineTo(550, 450);
+		context.strokeStyle = "green";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(550, 450);
+		context.lineTo(250, 450);
+		context.strokeStyle = "blue";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(250, 450);
+		context.lineTo(250, 250);
+		context.strokeStyle = "red";
+		context.stroke();
+		
+		//door
+		context.beginPath();
+		context.moveTo(390, 450);
+		context.lineTo(390, 400);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(390, 400);
+		context.lineTo(410, 400);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(410, 400);
+		context.lineTo(410, 450);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		//widow 1
+		context.beginPath();
+		context.moveTo(300, 280);
+		context.lineTo(350, 280);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(350, 280);
+		context.lineTo(350, 330);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(350, 330);
+		context.lineTo(300, 330);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(300, 330);
+		context.lineTo(300, 280);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		//widow 2
+		context.beginPath();
+		context.moveTo(450, 280);
+		context.lineTo(500, 280);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(500, 280);
+		context.lineTo(500, 330);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(500, 330);
+		context.lineTo(450, 330);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(450, 330);
+		context.lineTo(450, 280);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		//chimney
+		context.beginPath();
+		context.moveTo(270, 236);
+		context.lineTo(270, 170);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		context.beginPath();
+		context.moveTo(300, 216);
+		context.lineTo(300, 170);
+		context.strokeStyle = "black";
+		context.stroke();
+		
+		//steams
+		var startX = 100;
+		var startY = 100;
+		
+		context.beginPath();
+		context.moveTo(startX, startY);
+		context.bezierCurveTo(startX - 40, startY + 20, startX - 40, startY + 70, startX + 60, startY + 70);
+		context.bezierCurveTo(startX + 80, startY + 100, startX + 150, startY + 100, startX + 170, startY + 70);
+		context.bezierCurveTo(startX + 250, startY + 70, startX + 250, startY + 40, startX + 220, startY + 20);
+		context.bezierCurveTo(startX + 260, startY - 40, startX + 200, startY - 50, startX + 170, startY - 30);
+		context.bezierCurveTo(startX + 150, startY - 75, startX + 80, startY - 60, startX + 80, startY - 30);
+		context.bezierCurveTo(startX + 30, startY - 75, startX - 20, startY - 60, startX, startY);
+		context.closePath();
+		context.lineWidth = 5;
+		context.strokeStyle = "#0000ff";
+		context.stroke();
+		
+		function drawBranches(startX, startY, trunkWidth, level) {
+			canvas = document.getElementById('myCanvas');
+			context = canvas.getContext('2d');
+			if(level < 12) {
+			  var changeX = 200 / (level + 1);
+			  var changeY = 200 / (level + 1);
+
+			  var topRightX = startX + Math.random() * changeX;
+			  var topRightY = startY - Math.random() * changeY;
+
+			  var topLeftX = startX - Math.random() * changeX;
+			  var topLeftY = startY - Math.random() * changeY;
+
+			  // draw right branch
+			  context.beginPath();
+			  context.moveTo(startX + trunkWidth / 4, startY);
+			  context.quadraticCurveTo(startX + trunkWidth / 4, startY - trunkWidth, topRightX, topRightY);
+			  context.lineWidth = trunkWidth;
+			  context.lineCap = 'round';
+			  context.stroke();
+
+			  // draw left branch
+			  context.beginPath();
+			  context.moveTo(startX - trunkWidth / 4, startY);
+			  context.quadraticCurveTo(startX - trunkWidth / 4, startY - trunkWidth, topLeftX, topLeftY);
+			  context.lineWidth = trunkWidth;
+			  context.lineCap = 'round';
+			  context.stroke();
+
+			  drawBranches(topRightX, topRightY, trunkWidth * 0.7, level + 1);
+			  drawBranches(topLeftX, topLeftY, trunkWidth * 0.7, level + 1);
+			}
+		}
+		drawBranches(canvas.width * 3 / 4, canvas.height * 3 / 4, 20, 0);
+		
+		drawBranches(canvas.width * 5 / 7, canvas.height * 3 / 4, 10, 0);
+	}
+
+    </script>
+  </body>
+</html>
+</script>
+</head>
+
+<body>
+<center><canvas id="myCanvas" width="1500" height="700"></center>
+</body>
+</html

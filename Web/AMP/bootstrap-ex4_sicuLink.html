@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title> TEST BSP3</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+<script src="bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script src="bootstrap/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script async custom-element="amp-list" src="https://cdn.ampproject.org/v0/amp-list-0.1.js"></script>
+<script async custom-template="amp-mustache" src="https://cdn.ampproject.org/v0/amp-mustache-0.2.js"></script>
+<link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+<link rel="canonical" href="https://uncompiled.github.io/amp-bootstrap/" />
+
+<!-- AMP boilerplate -->
+<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+<script async src="https://cdn.ampproject.org/v0.js"></script>
+
+<style>
+.col1{
+background: #5c6580;
+}
+.col2{
+background: #cc6580;
+}
+.col3{
+background: #cc65cc;
+}
+
+.col4{
+background: #ccf1cc;
+}
+</style>
+</head>
+
+<body>
+<div class="jumbotron">
+<div class="container">
+<div class="row">
+<section expanded>
+<h1> LISTEN </h1>
+<h5> 
+<ul>
+<li>list-group-item-success fuer gruen; </li>
+<li>list-group-item-info fuer blue; </li>
+<li>list-group-item-warning fuer pale yellow;</li>
+<li>list-group-item-danger fuer light red;</li>
+</ul>
+</h5>
+</section>
+
+<section>
+<ul class="list-group">
+  <li class="list-group-item list-group-item-success">HOME
+  <span class="badge">101 </span>
+  </li>
+  <li class="list-group-item list-group-item-danger">BLUMEN
+  <span class="badge">2</span>
+  </li>
+  <li class="list-group-item">
+  <h4 class="list-group-item-heading"> DRAFT ITEM Heading</h4>
+  <p class="list-group-item-text list-group-item-danger"> TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT</p>
+  </li>
+  <li class="list-group-item">DELETED</li>
+  <li class="list-group-item">CONTACT</li>
+</ul>
+</section>
+</div>
+</div>
+</div>
+ 
+<a href="#" class="list-group-item">
+  <h4 class="list-group-item-heading"> DRAFT ITEM Heading</h4>
+  <p class="list-group-item-text"> TEXT mit <b>a</b> TEXT </p>
+  </a>
+  <h2> NAVIGATION </h2>
+  <ul class="nav nav-tabs">
+  <li class="active">
+  <a href="#">HOME</a>
+  <span class="badge">11 </span>
+  </li>
+  <li >
+  <a href="#">ACTIVITY</a>
+  <span class="badge">2 </span>
+  </li>
+  <li >
+  <a href="#">LINK</a>
+  <span class="badge">3 </span>
+  </li>
+  </ul>
+  </br>
+  <ul class="nav nav-pills">
+  <li class="active">
+  <a href="#">HOME</a>
+  <span class="badge">1 </span>
+  </li>
+  <li ><a href="#">ACTIVITY</a>
+  <span class="badge">2 </span>
+  </li>
+  <li ><a href="#">LINK</a>
+  <div class="badge">3 </div>
+  </li>
+  </ul>
+  </br></br>
+  <ul class="nav nav-pills nav-stacked">
+  <li class="active"><a href="#">HOME</a>
+  <span class="badge">102 </span>
+  </li>
+  <li ><a href="#">ACTIVITY</a>
+  <span class="badge">2 </span>
+  </li>
+  <li ><a href="#">LINK</a>
+  <span class="badge">3 </span>
+  </li>
+  </ul>
+  </br></br>
+  <h2> NAVBAR</h2>
+  <div class="navbar navbar-default">
+     <div class="container-fluid">
+	 
+	    <div class="navbar-header">
+	<button type="button" class="navbar-toggle"  
+		data-toggle="collapse" data-target="#mein-inhalt">
+        <span class="icon-bar"></span>	
+		<span class="icon-bar"></span>	
+		<span class="icon-bar"></span>	
+		<span class="icon-bar"></span>	
+		<span class="icon-bar"></span>	
+		<span class="icon-bar"></span>			
+	 </button>
+	 <a class="navbar-brand" href="#"> Meine WEBseite</a>
+     </div>
+	 <div class="collaps navbar-collapse" id="mein-inhalt">
+	 <ul class="nav navbar-nav">
+	    <li class="active">
+		<a href="#"> 
+		<span class="glyphicon glyphicon-heart " >
+		HOME
+		</span>
+</a></li>
+		<li> <a href="#">About</a></li>
+		<li> <a href="#">Contact</a></li>
+		<li class="dropdown">
+		   <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		   <span class="glyphicon glyphicon-leaf">TOWNS</span>
+		   <b class="caret"></b></a>
+					<ul class="dropdown-menu">
+				<li><a href="#" class="btn btn-primary btn-lg">
+				Brasov<span class="badge">2</span></a></li>
+				<li><a href="#" class="btn btn-danger btn-lg">Heilbronn 
+				<span class="badge">1</span></a></li>
+				<li><a href="#">Bukarest</a></li>
+				</ul>
+</ul>
+</br></br>
+<h5> Es gibt ueber 250 glyphs  http://getbootstrap.com/components/#glyphicons
+</h5>
+<span class="glyphicon glyphicon-heart" ></span>
+<span class="glyphicon glyphicon-plane"></span>
+<span class="glyphicon glyphicon-leaf"></span>
+<span class="glyphicon glyphicon-phone"></span>
+<span class="glyphicon glyphicon-piggy-bank"></span>
+
+</div>
+   </div>
+</div>
+  <div class="well col1">
+     <p> ParaGraph.... ... ... ParaGraph.... </p>
+  </div>
+  
+  <h1> FORMs</h1>
+ <form class="form">
+	<div class="form-group">
+	   <label for="nameField">NAME</label>
+	   <input type="text" class="form-control" 
+	   id="nameField" placeholder="DeinName*" required/>
+     </div>
+	 <div class="form-group">
+	   <label for="emailField">Email</label>
+	   <input type="email" class="form-control" 
+	   id="emailField" placeholder="DeineMail*" required/>
+     </div>
+	 <div class="form-group">
+	   <label for="descField">Description</label>
+	   <textarea type="text" class="form-control" id="descField" 
+	   placeholder="Deine Description*" required/>
+       </textarea>
+	 </div>
+	 <div class="col-xs-10 col-xs-offset-2">
+	 <button type="submit" class="btn btn-primary"> Submit</button>
+	 <button type="reset" class="btn btn-default"> RESET</button>
+	</div>
+</form>	 
+<h2> HORIZONTAL FORMS</h2>
+<form class="form-horizontal">
+	<div class="form-group">
+	   <label for="nameField" class="col-xs-2">NAME</label>
+	   <div class="col-xs-10">
+	   <input type="text" class="form-control" id="nameField" placeholder="DeinName*" />
+     </div>
+	 </div>
+	 <div class="form-group">
+	   <label for="emailField" class="col-xs-2">Email</label>
+	   <div class="col-xs-10">
+	   <input type="email" class="form-control" id="emailField" placeholder="DeineMail*" />
+     </div>
+	 </div>
+	 
+	 <div class="form-group">
+	   <label for="descField" class="col-xs-2">Description</label>
+	   <div class="col-xs-10">
+	   <textarea type="text" class="form-control" id="descField" 
+	   placeholder="Deine Description*" />
+       </textarea>
+	  </div>
+	 </div>
+	 
+	<div class="col-xs-10 col-xs-offset-2">
+	 <button type="submit" class="btn btn-primary"> Submit</button>
+	 <button type="reset" class="btn btn-default"> RESET</button>
+	</div>
+	</div>
+</form>	 
+<h2> INLINE FORM</h2>
+
+<div class="well well-sm">
+ <form class="form-inline">
+     <div class="form-group">
+	 <input type="email" class="form-control" id="emailField" placeholder="Email" required/>
+	 </div>
+	 <div class="form-group">
+	 <input type="password" class="form-control" id="passwordField" placeholder="Passw">
+	 </div>
+	 <div class "checkbox">
+	 <label>
+	 <input type="checkbox"> HALLO </label>
+	 </div>
+	 <button type="submit" class="btn btn-primary"> SIGN</button>
+  
+  </form>
+  </br></br></br>
+</body>
+</html>
+
+
+
+
+

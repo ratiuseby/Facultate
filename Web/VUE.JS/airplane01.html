@@ -1,0 +1,108 @@
+<!-- Ratiu Sebastian	Facultatea de Matematica si Informatica - TIN -->
+<!doctype html>
+<html>
+	<head>
+		<title>Airplane</title>
+		<style type="text/css">
+			.airplane {
+				position:absolute;
+				
+			}
+			div.buttonUp {
+				position:absolute;
+				top: 40px;
+				left: 500px;
+				
+				cursor:pointer;
+			}
+			
+			
+			
+			div.buttonDown {
+				position:absolute;
+				top: 40px;
+				left: 300px;
+				
+				cursor:pointer;
+			}
+			
+			
+			
+			div.buttonRight {
+				position:absolute;
+				top: 140px;
+				left: 500px;
+				
+				cursor:pointer;
+			}
+			
+			
+			
+			div.buttonLeft {
+				position:absolute;
+				top: 140px;
+				left: 300px;
+				
+				cursor:pointer;
+			}
+
+			.component-fade-enter-active, .component-fade-leave-active {
+			  transition: opacity .3s ease;
+			}
+			.component-fade-enter, .component-fade-leave-to {
+			  opacity: 0;
+			}
+
+			
+		</style>
+		<script src="https://unpkg.com/vue/dist/vue.js"></script>
+		<script type="text/javascript">
+			
+			window.onload = function () {
+
+				new Vue({
+				  el: '#demo',
+				  data: {
+				    view: 'default'
+				  },
+				  components: {
+				    'default': {
+				      template: '<div><img class="airplane" src="img/clouds_IL_NEU.png" height="100%" width="100%"/></div>'
+				    },
+				    'up': {
+				      template: '<div><img class="airplane" src="img/clouds_IL_NEU_up.png" height="100%" width="100%"/></div>'
+				    },
+				    'down': {
+				      template: '<div><img class="airplane" src="img/clouds_IL_NEU_down.png" height="100%" width="100%"/></div>'
+				    },
+				    'left': {
+				      template: '<div><img class="airplane" src="img/clouds_IL_NEU_left.png" height="100%" width="100%"/></div>'
+				    },
+				    'right': {
+				      template: '<div><img class="airplane" src="img/clouds_IL_NEU_right.png" height="100%" width="100%"/></div>'
+				    }
+				  }
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="demo">
+			<input v-model="view" type="radio" class="buttonUp" value="up" name="view" id="up">
+			<label for="up"><img class="buttonUp" src="UP.png" height="250" width="250" /></label>		
+
+			<input v-model="view" type="radio" class="buttonDown" value="down" name="view" id="down">
+			<label for="down"><img src="DOWN.png" class="buttonDown" height="250" width="250" /></label>
+
+			<input v-model="view" type="radio" class="buttonLeft" value="left" name="view" id="left">
+			<label for="left"><img src="LEFT.png" class="buttonLeft" height="250" width="250" /></label>
+
+			<input v-model="view" type="radio" class="buttonRight" value="right" name="view" id="right">
+			<label for="right"><img src="RIGHT.png" class="buttonRight" height="250" width="250" /></label>	
+
+			<transition name="component-fade" mode="out-in">
+			  <component v-bind:is="view"></component>
+			</transition>
+		</div>
+	</body>
+</html>

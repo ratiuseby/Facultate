@@ -1,0 +1,150 @@
+<!-- Ratiu Sebastian	Facultatea de Matematica si Informatica - TIN -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>W3.CSS</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<style>
+	/* Make the image fully responsive */
+	  .carousel-inner img {
+	      width: 100%;
+	      height: 100%;
+	  }
+
+	  .mySlides {display:none}
+	  .w3-left, .w3-right, .w3-badge {cursor:pointer}
+	  .w3-badge {height:13px;width:13px;padding:0}
+	</style>
+</head>
+<body>
+
+<br>
+<br>
+<br>
+
+<center>
+<div class="w3-container">
+  <div class="w3-card-4" style="width:50%">
+    <img src="https://www.w3schools.com/w3css/img_snowtops.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container w3-center">
+      <p>The Italian / Austrian Alps (W3.CSS)</p>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="container">
+  <div class="card" style="width:50%">
+  	<img class="card-img-top" src="https://www.w3schools.com/w3css/img_snowtops.jpg" alt="Card image" style="width:100%">
+    <div class="card-body">
+      <p class="card-text">The Italian / Austrian Alps (Bootstrap)</p>
+    </div>
+  </div>
+</div>
+</center>
+
+<br>
+<br>
+<br>
+
+<div id="demo" class="carousel slide" data-ride="carousel">
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://www.w3schools.com/bootstrap4/la.jpg" alt="Los Angeles" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>Los Angeles (Bootstrap)</h3>
+        <p>We had such a great time in LA!</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.w3schools.com/bootstrap4/chicago.jpg" alt="Chicago" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>Chicago (Bootstrap)</h3>
+        <p>Thank you, Chicago!</p>
+      </div>   
+    </div>
+    <div class="carousel-item">
+      <img src="https://www.w3schools.com/bootstrap4/ny.jpg" alt="New York" width="1100" height="500">
+      <div class="carousel-caption">
+        <h3>New York (Bootstrap)</h3>
+        <p>We love the Big Apple!</p>
+      </div>   
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="w3-content w3-display-container">
+  <img class="mySlides" src="https://www.w3schools.com/w3css/img_nature_wide.jpg" style="width:100%">
+  <img class="mySlides" src="https://www.w3schools.com/w3css/img_snow_wide.jpg" style="width:100%">
+  <img class="mySlides" src="https://www.w3schools.com/w3css/img_mountains_wide.jpg" style="width:100%">
+  <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+    <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+    <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+    <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+  </div>
+  <div class="w3-display-middle w3-large w3-container w3-padding-16 w3-black">
+    (W3.CSS)
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+</body>
+</html>
